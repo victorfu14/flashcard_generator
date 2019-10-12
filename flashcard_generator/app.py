@@ -6,7 +6,7 @@ import uuid
 
 app = Flask(__name__)
 app.debug = True
-app._static_folder = os.path.abspath("static/")
+#app._static_folder = os.path.abspath("template/static")
  
 @app.route("/")
 def index():

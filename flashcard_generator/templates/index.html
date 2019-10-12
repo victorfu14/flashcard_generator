@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Welcome</title>
+    <title>Main Page</title>
 </head>
 <body>
     <h1>begin your study</h1>
+    <script type=text/javascript src="{{
+        url_for('static', filename='js/hello.js') }}"></script>
+    <form action = "/cgi-bin/hello_get.cgi" method = "get">
+        Enter the text!
+        <br>
+        <textarea rows = "5" cols = "60" name = "description"></textarea>
+        <br>
+        <input type = "submit" value = "submit" />
+    </form>
 </body>
 </html>
