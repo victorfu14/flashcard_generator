@@ -28,5 +28,5 @@ def sample_analyze_entities(text_content):
     encoding_type = enums.EncodingType.UTF8
 
     response = client.analyze_entities(document, encoding_type=encoding_type)
-    return [entity.name for entity in response.entities]
+    return set([entity.name for entity in response.entities])
 

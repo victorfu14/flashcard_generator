@@ -4,7 +4,6 @@ from getKeyWords import sample_analyze_entities
 from fill_blanks import get_blank_questions
 from getPDF import getPDF
 
-
 app = Flask(__name__)
 app.debug = True
 
@@ -30,7 +29,7 @@ def submit_text():
 @app.route("/submit-keywords", methods=['POST'])
 def make_flashcards():
     text = request.form.get('text')
-    keywords = request.form.get('keywords').split(",")
+    keywords = [word for word in request.form.get('keywords').split(",") if len(word) > 1]
     filename = getPDF(text, keywords)
     # Return them using send_from_directory
     return send_from_directory('', filename)

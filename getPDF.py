@@ -63,7 +63,7 @@ class BoxText(Flowable):
 def getString(answers):
     string = ""
     for answer in answers[1]:
-        string += "[" + str(answer[0]) + "] " + answer[1] +'\n'
+        string += "[" + str(answer[0]) + "] " + answer[1] + '\n'
     return string
 
 
