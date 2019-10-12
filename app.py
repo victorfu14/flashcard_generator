@@ -2,6 +2,7 @@ from flask import Flask, render_template, make_response, send_from_directory
 from flask import redirect, request, jsonify, url_for
 from getKeyWords import sample_analyze_entities
 from fill_blanks import get_blank_questions
+from getPDF import getPDF
 
 
 app = Flask(__name__)
@@ -30,10 +31,9 @@ def submit_text():
 def make_flashcards():
     text = request.form.get('text')
     keywords = request.form.get('keywords').split(",")
-    questions = get_blank_questions(text, keywords)
-    # Generate PDF flash cards
+    filename = getPDF(text, keywords)
     # Return them using send_from_directory
-    return "1"
+    return send_from_directory('', filename)
 
 
 if __name__ == "__main__":

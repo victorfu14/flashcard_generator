@@ -13,7 +13,7 @@
 <body>
     <h1>Choose to keep: </h1>
     {% for key in keywords %}
-        <input type="checkbox" id="myCheck" value={{key}}>{{ key }}<br/>
+        <input type="checkbox" id="myCheck" value={{key}} checked>{{ key }}<br/>
     {% endfor %}
     <button id="submit" onclick="submitKeywords()">Submit </button>
     <p id="text">{{text}}</p>
