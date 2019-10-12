@@ -1,17 +1,35 @@
-from flask import Flask, render_template, make_response
+from flask import Flask, render_template, make_response, send_from_directory
 from flask import redirect, request, jsonify, url_for
 import io
 import os
 import uuid
+from getKeyWords import sample_analyze_entities
+from fill_blanks import get_blank_questions
 
 app = Flask(__name__)
 app.debug = True
-#app._static_folder = os.path.abspath("template/static")
- 
+
+
 @app.route("/")
 def index():
-    title = 'main page'
-    return render_template('index.html', title=title)
- 
+    return render_template('index.html', title='Flashcard Generator')
+
+
+@app.route("/submit-text", methods=['POST'])
+def make_flashcards():
+    text = request.form.get('text')
+    keywords = sample_analyze_entities(text)
+    # Return them
+    return 'Nothing'
+
+
+@app.route("/submit-keywords", methods=['POST'])
+def make_flashcards():
+    # Generate flash cards
+    # request.form.get('keywords')
+    # Return them using send_from_directory
+    return 'Nothing'
+
+
 if __name__ == "__main__":
     app.run()
