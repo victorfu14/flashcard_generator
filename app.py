@@ -14,6 +14,7 @@ app.debug = True
 def index():
     return render_template('index.html', title='Flashcard Generator')
 
+
 @app.route("/input-page")
 def input_page():
     return render_template('input_page.html', title='Flashcard Generator')
@@ -24,7 +25,7 @@ def submit_text():
     text = request.form.get('text')
     # keywords = sample_analyze_entities(text)
     # Return them
-    return 'Nothing'
+    return text
 
 
 @app.route("/submit-keywords", methods=['POST'])
