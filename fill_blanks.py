@@ -13,7 +13,7 @@ def get_blank_questions(text, words, n_questions=10, n_blanks=1):
         used_words = sample(used_words, min(n_blanks, len(used_words)))
         count = 0
         for index, word in enumerate(used_words):
-            regex = "\\b" +  word + "\\b";
+            regex = "\\b" +  word + "\\b"
             if re.search("\\b" +  word + "\\b",s):
                 s = re.sub(regex, "__" + str(index - count) + "__", s)
                 removed_words.append((index - count, word))

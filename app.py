@@ -3,8 +3,8 @@ from flask import redirect, request, jsonify, url_for
 import io
 import os
 import uuid
-# from getKeyWords import sample_analyze_entities
-# from fill_blanks import get_blank_questions
+from getKeyWords import sample_analyze_entities
+from fill_blanks import get_blank_questions
 
 app = Flask(__name__)
 app.debug = True
@@ -23,9 +23,9 @@ def input_page():
 @app.route("/submit-text", methods=['POST'])
 def submit_text():
     text = request.form.get('text')
-    # keywords = sample_analyze_entities(text)
+    keywords = sample_analyze_entities(text)
     # Return them
-    return text
+    return render_template('keyword_return.html', keywords=keywords, title='Customize Your Preference')
 
 
 @app.route("/submit-keywords", methods=['POST'])

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/check_keyword.css" >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-compatible" content="ie=edge">
+    <title>Main Page</title>
+</head>
+<body>
+    <h1>Choose to keep: </h1>
+    <form action="/submit-keyword" method="post" class="input" id="form">
+    {% for key in keywords %}
+        <input type="checkbox" id="myCheck" value={{key}}>{{ key }}<br/> 
+    {% endfor %}
+    <input type="button" id="submit" value="submit"><br/>
+    <input type="hidden" name="keywords" id="keywords">
+    </form>
+    <div id="output"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+        $('#submit').click(function() {
+            var values = $('input:checked').map(function() {
+                return this.value;
+            }).get();
+            $('#keywords').val(values);
+            $('#form').submit();
+    });
+    </script>
+    <script>console.log(output);</script>
+</body>
+</html>
