@@ -1,8 +1,7 @@
 from google.cloud import language_v1
 from google.cloud.language_v1 import enums
-import string
-import nltk
-nltk.download('punkt')
+from fill_blanks import get_blank_questions
+
 
 def sample_analyze_entities(text_content):
     """
@@ -29,22 +28,12 @@ def sample_analyze_entities(text_content):
     encoding_type = enums.EncodingType.UTF8
 
     response = client.analyze_entities(document, encoding_type=encoding_type)
-    
-    KeyWords = []
-    # Loop through entitites returned from the API
-    for entity in response.entities:
-        if enums.Entity.Type(entity.type).name == "OTHER":
-            # Only add into our list if entity is not too low
-            if entity.salience > 0.05:
-                KeyWords.append(entity.name)
-        else:
-            KeyWords.append(entity.name)
-    return KeyWords
 
-def getKeyWords():
-    text = input()
-    return sample_analyze_entities(text)
+    return [entity.name for entity in response.entities]
 
 
 if __name__ == '__main__':
-    print(getKeyWords())
+    text = input()
+    keywords = sample_analyze_entities(text)
+    questions = get_blank_questions(text, keywords)
+    print(questions)
