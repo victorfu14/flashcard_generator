@@ -30,9 +30,3 @@ def sample_analyze_entities(text_content):
     response = client.analyze_entities(document, encoding_type=encoding_type)
     return [entity.name for entity in response.entities]
 
-
-if __name__ == '__main__':
-    text = input()
-    keywords = sample_analyze_entities(text)
-    questions = get_blank_questions(text, keywords, n_questions = 10, n_blanks = int(input()))
-    print(questions)
