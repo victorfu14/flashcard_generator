@@ -3,8 +3,8 @@ from flask import redirect, request, jsonify, url_for
 import io
 import os
 import uuid
-from getKeyWords import sample_analyze_entities
-from fill_blanks import get_blank_questions
+# from getKeyWords import sample_analyze_entities
+# from fill_blanks import get_blank_questions
 
 app = Flask(__name__)
 app.debug = True
@@ -14,11 +14,15 @@ app.debug = True
 def index():
     return render_template('index.html', title='Flashcard Generator')
 
+@app.route("/input-page")
+def input_page():
+    return render_template('input_page.html', title='Flashcard Generator')
+
 
 @app.route("/submit-text", methods=['POST'])
-def make_flashcards():
+def submit_text():
     text = request.form.get('text')
-    keywords = sample_analyze_entities(text)
+    # keywords = sample_analyze_entities(text)
     # Return them
     return 'Nothing'
 
