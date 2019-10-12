@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/check_keyword.css" >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>Main Page</title>
+</head>
+<body>
+    <h1>Choose to keep: </h1>
+    {% for key in keywords %}
+        <input type="checkbox" id="myCheck" value={{key}}>{{ key }}<br/>
+    {% endfor %}
+    <button id="submit" onclick="submitKeywords()">Submit </button>
+    <p id="text">{{text}}</p>
+    <script>
+        function submitKeywords() {
+            var values = $('input:checked').map(function() {
+                return this.value;
+            }).get();
+            form = document.createElement('form');
+            form.method = 'post';
+            form.action = '/submit-keywords';
+            hiddenField = document.createElement('input');
+            hiddenField.type = 'hidden';
+            hiddenField.name = 'keywords';
+            hiddenField.value = values;
+            form.appendChild(hiddenField);
+            hiddenField = document.createElement('input');
+            hiddenField.type = 'hidden';
+            hiddenField.name = 'text';
+            hiddenField.value = $('#text').text();
+            form.appendChild(hiddenField);
+            document.body.appendChild(form);
+            form.submit();
+        };
+    </script>
+
+</body>
+</html>
