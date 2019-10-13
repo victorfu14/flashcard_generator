@@ -14,7 +14,7 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
     display: inline-block;
     zoom: 1; 
-    width: 150px; 
+    width: 160px; 
     /* text-shadow: 0 .05rem .1rem rgba(255, 255, 255, 1);
     box-shadow: inset 0 0 5rem rgba(255, 255, 255, 0.5); */
 }
@@ -24,4 +24,12 @@ body{
 }
 .btn-outline-primary{
     width: 70em;
+}
+
+/*
+ * Footer
+ */
+ .mastfoot {
+    text-align: center;
+    color: rgba(2, 31, 32, 0.685);
 }

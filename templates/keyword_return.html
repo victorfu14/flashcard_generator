@@ -13,7 +13,7 @@
 <body>
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <h1 class="top">Keywords You Choose to Keep:</h1>
-        <div>
+        <div style="height: 200px; overflow:auto;">
         {% for key in keywords %}
             <input type="checkbox" id="myCheck" value={{key}} checked><label class ="output">{{ key }}</label>
         {% endfor %}
@@ -24,5 +24,10 @@
         <p class="text" id="text">{{text}}</p>
         <script src="/static/js/keyword.js"></script>
     </div>
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>Made at <a href="https://mhacks12.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover">MHacks12</a></p>
+        </div>
+    </footer>
 </body>
 </html>
