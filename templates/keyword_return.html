@@ -15,7 +15,7 @@
         <h1 class="top">Keywords You Choose to Keep:</h1>
         <div style="height: 400px; overflow:auto;">
         {% for key in keywords %}
-            <div class="parent"><label class ="output">{{ key }}</label><input type="checkbox" id="myCheck" value={{key}} checked></div>
+            <label class ="output">{{ key }}</label><input type="checkbox" id="myCheck" value={{key}} checked>
         {% endfor %}
         </div>
         <br>
