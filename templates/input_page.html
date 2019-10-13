@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/input.css" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/input.css" >
     <title>Main Page</title>
 </head>
-<body>
-    <h1>Enter the text!</h1>
-    <form action="/submit-text" method="post" class="input">
-        <br>
-        <textarea class="box" type="text" id="text" name="text"></textarea>
-        <br>
-        <input class="submit" type="submit" value="submit" />
-    </form>
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <h1>Enter the text!</h1>
+         <form action="/submit-text" method="post" class="input">
+            <br>
+            <textarea class="box" type="text" id="text" name="text" placeholder="Write something here..."></textarea>
+            <br>
+            <input class="submit" type="submit" value="submit" />
+        </form>
+</div>
 </body>
 </html>

@@ -1,21 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/main_page.css" >
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-compatible" content="ie=edge">
-    <title>Main Page</title>
+    <title>Flashcard Generator - Powered by GCP Natural Language API</title>
+    <!-- <style>
+            .bd-placeholder-img {
+              font-size: 1.125rem;
+              text-anchor: middle;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+            }
+      
+            @media (min-width: 768px) {
+              .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+              }
+            }
+    </style> -->
+    <link rel="stylesheet" href="/static/css/main_page.css" >
 </head>
-<body>
-    <script src="/static/js/main.js"></script>
-    <div class="s1">
-        <h1>Easy Study</h1>
-        <p>
-            desription here<br>
-            <a href="/input-page">Let's get started</a>
-        </p>
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Flashcard Generator</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="#home">Home</a>   
+                    <a class="nav-link" href="/info">Info</a>   
+                    <a class="nav-link" href="/us">About Us</a>
+                </nav>
+                <!-- <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#feature">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#us">About Us</a>
+                    </li>
+                </ul> -->
+            </div>
+        </header>
+        <!-- <main role="main" class="inner cover"> -->
+        <!-- <div class="tab-content"> -->
+            <!-- <div class="tab-pane container active" id="home"> -->
+                <h1 class="cover-heading">Easy Study - with NLP.</h1>
+                <p class="lead">An educational tool designed for instructors and students to generate "Fill in the Blank" worksheets for entered text. Users can specify the category of the words to be removed and can also export flashcards in pdf format.</p>
+                <p class="lead">
+                    <a href="/input-page" class="btn btn-lg btn-secondary">Start Generating!</a>
+                </p>
+            <!-- </div> -->
+            <!-- <div class="tab-pane container fade" id="feature">...</div>
+            <div class="tab-pane container fade" id="us">...</div> 
+        </div> -->
+        <!-- </main> -->
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Made at <a href="https://mhacks12.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover">MHacks12</a></p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

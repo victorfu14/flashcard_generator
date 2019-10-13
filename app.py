@@ -17,6 +17,13 @@ def index():
 def input_page():
     return render_template('input_page.html', title='Flashcard Generator')
 
+@app.route("/info")
+def info():
+    return render_template('info.html', title='Info')
+
+@app.route("/us")
+def about_us():
+    return render_template('about_us.html', title='About Us')
 
 @app.route("/submit-text", methods=['POST'])
 def submit_text():

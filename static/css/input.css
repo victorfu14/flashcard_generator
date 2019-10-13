@@ -1,3 +1,8 @@
+html,
+body {
+    height: 100%;
+    background: linear-gradient(to left top, #B8E3FB, #DCDCDC);
+}
 h1{
     font-family: 'Raleway', sans-serif;
     font-size: 66px;
@@ -8,13 +13,15 @@ h1{
     transform: translate(-50%, -10%);
 }
 .box {
-    font-size: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    background: linear-gradient(to left top, rgba(184, 227, 251, 0.5), rgba(220, 220, 220, 0.5));
     width: 80%;
     height: 50%;
     position: absolute;
     left: 50%;
-    top: 60%;
-    transform: translate(-50%, -60%);
+    top: 55%;
+    transform: translate(-50%, -55%);
 }
 .submit { 
     width: 40%;
