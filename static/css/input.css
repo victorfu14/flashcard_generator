@@ -23,18 +23,10 @@ h1{
     top: 55%;
     transform: translate(-50%, -55%);
 }
-.submit { 
-    width: 40%;
+.btn-primary { 
+    width: 60%;
     position: absolute;
     left: 50%;
     top: 85%;
     transform: translate(-50%, -85%);
 }
-/* .s2 submit {
-    width: 40%;
-    height: 50%;
-    position: absolute;
-    left: 50%;
-    top: 100%;
-    transform: translate(-50%, -100%);
-} */

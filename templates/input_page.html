@@ -7,16 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-compatible" content="ie=edge">
     <link rel="stylesheet" href="/static/css/input.css" >
-    <title>Main Page</title>
+    <title>Submit Page</title>
 </head>
 <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <h1>Enter the text!</h1>
-         <form action="/submit-text" method="post" class="input">
+        <form action="/submit-text" method="post" class="input">
             <br>
             <textarea class="box" type="text" id="text" name="text" placeholder="Write something here..."></textarea>
             <br>
-            <input class="submit" type="submit" value="submit" />
+            <button type="submit" class="submit btn btn-primary btn-block">Submit Your Text</button>
         </form>
 </div>
 </body>

@@ -1,44 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/check_keyword.css" >
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <title>Main Page</title>
+    <link rel="stylesheet" href="/static/css/check_keyword.css" >
+    <title>Customize Your Keywords</title>
 </head>
 <body>
-    <h1>Choose to keep: </h1>
-    {% for key in keywords %}
-        <input type="checkbox" id="myCheck" value={{key}} checked>{{ key }}<br/>
-    {% endfor %}
-    <button id="submit" onclick="submitKeywords()">Submit </button>
-    <p id="text">{{text}}</p>
-    <script>
-        function submitKeywords() {
-            var values = $('input:checked').map(function() {
-                return this.value;
-            }).get();
-            form = document.createElement('form');
-            form.method = 'post';
-            form.action = '/submit-keywords';
-            hiddenField = document.createElement('input');
-            hiddenField.type = 'hidden';
-            hiddenField.name = 'keywords';
-            hiddenField.value = values;
-            form.appendChild(hiddenField);
-            hiddenField = document.createElement('input');
-            hiddenField.type = 'hidden';
-            hiddenField.name = 'text';
-            hiddenField.value = $('#text').text();
-            form.appendChild(hiddenField);
-            document.body.appendChild(form);
-            form.submit();
-        };
-    </script>
-
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <h1 class="top">Keywords You Choose to Keep:</h1>
+        <div>
+        {% for key in keywords %}
+            <input display="inline-block" width="150px" type="checkbox" id="myCheck" value={{key}} checked>{{ key }}
+        {% endfor %}
+        </div>
+        <br>
+        <button class="btn btn-outline-primary justify-content-center" id="submit" onclick="submitKeywords()">Submit - Generate Flashcards Now</button>
+        <br>
+        <p class="text" id="text">{{text}}</p>
+        <script src="/static/js/keyword.js"></script>
+    </div>
 </body>
 </html>
