@@ -15,7 +15,7 @@
         <h1 class="top">Keywords You Choose to Keep:</h1>
         <div>
         {% for key in keywords %}
-            <input display="inline-block" width="150px" type="checkbox" id="myCheck" value={{key}} checked>{{ key }}
+            <input type="checkbox" id="myCheck" value={{key}} checked><label class ="output">{{ key }}</label>
         {% endfor %}
         </div>
         <br>
